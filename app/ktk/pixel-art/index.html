@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>픽셀 아트 에디터</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-wrap">
+    <header class="editor-header">
+      <h1>픽셀 아트 에디터</h1>
+      <p class="instructions">격자를 클릭하거나 드래그해서 그림을 그려보세요.</p>
+    </header>
+
+    <div class="toolbar">
+      <div class="tool-buttons">
+        <button id="pen-btn" class="tool-btn active" type="button" aria-label="펜">✏️ 펜</button>
+        <button id="eraser-btn" class="tool-btn" type="button" aria-label="지우개">🧹 지우개</button>
+      </div>
+      <div class="current-color-display">
+        <span>현재 색상</span>
+        <span id="current-color-swatch" class="color-swatch-preview"></span>
+      </div>
+    </div>
+
+    <div class="editor-main">
+      <div id="grid" class="grid" role="grid" aria-label="16x16 픽셀 그리드"></div>
+
+      <div class="palette-panel">
+        <div id="palette" class="palette"><!-- JS가 색상 스와치를 렌더링 --></div>
+        <label class="custom-color-label">
+          커스텀 색상
+          <input type="color" id="custom-color-input" value="#000000">
+        </label>
+      </div>
+    </div>
+
+    <div class="actions-row">
+      <button id="clear-btn" class="action-btn secondary" type="button">전체 지우기</button>
+      <button id="export-btn" class="action-btn primary" type="button">PNG로 저장</button>
+    </div>
+
+    <a class="back-link" href="../../../public/index.html">← 블로그로 돌아가기</a>
+  </div>
+
+  <script src="editor.js"></script>
+</body>
+</html>

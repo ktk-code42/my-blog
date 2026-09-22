@@ -68,6 +68,11 @@ const APPS = [
     description: '방향키·스와이프로 숫자 타일을 밀어 합치는 퍼즐 게임',
     url: '../app/ktk/2048/index.html',
   },
+  {
+    title: '픽셀 아트 에디터',
+    description: '16x16 격자에 도트를 찍어 그림을 그리고 PNG로 저장',
+    url: '../app/ktk/pixel-art/index.html',
+  },
 ];
 
 function buildIndexPages(posts) {
