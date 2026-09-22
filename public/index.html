@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Blog</title>
+<meta name="description" content="마크다운으로 작성한 블로그 글 목록" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml" />
+<link rel="stylesheet" href="assets/style.css" />
+<script>
+  // 깜빡임 방지: CSS/본문이 그려지기 전에 저장된 테마를 먼저 적용한다.
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-title" href="index.html">My Blog</a>
+    <nav class="site-nav">
+      <a href="index.html">홈</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크 모드 전환">🌙</button>
+    </nav>
+  </div>
+  <div class="wrap search-wrap">
+    <input id="search-input" type="search" placeholder="글 검색..." aria-label="글 검색" data-root="" />
+    <ul id="search-results" class="search-results" hidden></ul>
+  </div>
+</header>
+
+<main class="wrap content">
+
+
+<section class="app-section">
+  <h2 class="app-section-title">미니 웹앱</h2>
+  <div class="app-grid">
+<a class="app-card" href="../app/ktk/2048/index.html">
+  <span class="app-card-title">2048</span>
+  <span class="app-card-desc">방향키·스와이프로 숫자 타일을 밀어 합치는 퍼즐 게임</span>
+</a></div>
+</section>
+<h1>모든 글</h1>
+<div class="post-list">
+<article class="post-card">
+  <h2><a href="posts/오늘-배운-것/index.html">오늘 배운 것</a></h2>
+  <p class="post-meta"><time datetime="2026-09-22">2026-09-22</time></p>
+  <p class="post-excerpt">클로드 코드로 블로그를 만들면서 정리한 HTML, CSS, JavaScript의 역할.</p>
+  <ul class="tag-list"><li><a class="tag" href="tags/개발/index.html">#개발</a></li><li><a class="tag" href="tags/회고/index.html">#회고</a></li></ul>
+</article>
+
+<article class="post-card">
+  <h2><a href="posts/첫-글-안녕하세요/index.html">첫 글, 안녕하세요</a></h2>
+  <p class="post-meta"><time datetime="2026-09-21">2026-09-21</time></p>
+  <p class="post-excerpt">이 블로그를 시작하며 남기는 첫 번째 글입니다.</p>
+  <ul class="tag-list"><li><a class="tag" href="tags/일상/index.html">#일상</a></li><li><a class="tag" href="tags/소개/index.html">#소개</a></li></ul>
+</article>
+
+<article class="post-card">
+  <h2><a href="posts/마크다운으로-글-쓰는-팁/index.html">마크다운으로 글 쓰는 팁</a></h2>
+  <p class="post-meta"><time datetime="2026-09-20">2026-09-20</time></p>
+  <p class="post-excerpt">마크다운 문법 중 자주 쓰는 것들을 정리했습니다.</p>
+  <ul class="tag-list"><li><a class="tag" href="tags/글쓰기/index.html">#글쓰기</a></li><li><a class="tag" href="tags/팁/index.html">#팁</a></li></ul>
+</article>
+
+<article class="post-card">
+  <h2><a href="posts/다크-모드는-왜-필요할까/index.html">다크 모드는 왜 필요할까</a></h2>
+  <p class="post-meta"><time datetime="2026-09-19">2026-09-19</time></p>
+  <p class="post-excerpt">다크 모드를 지원하면 좋은 이유와 구현 방법을 간단히 다룹니다.</p>
+  <ul class="tag-list"><li><a class="tag" href="tags/디자인/index.html">#디자인</a></li><li><a class="tag" href="tags/개발/index.html">#개발</a></li></ul>
+</article>
+
+<article class="post-card">
+  <h2><a href="posts/모바일-우선-디자인/index.html">모바일 우선 디자인</a></h2>
+  <p class="post-meta"><time datetime="2026-09-18">2026-09-18</time></p>
+  <p class="post-excerpt">작은 화면부터 설계하고 큰 화면으로 확장하는 방식을 소개합니다.</p>
+  <ul class="tag-list"><li><a class="tag" href="tags/디자인/index.html">#디자인</a></li><li><a class="tag" href="tags/반응형/index.html">#반응형</a></li></ul>
+</article></div>
+
+<nav class="pagination" aria-label="페이지 이동">
+  <span class="page-link disabled">&larr; 이전</span>
+  <span class="page-status">1 / 2</span>
+  <a class="page-link" href="page/2/index.html">다음 &rarr;</a>
+</nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; 2026 My Blog</p>
+  </div>
+</footer>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

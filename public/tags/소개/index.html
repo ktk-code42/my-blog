@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>#소개 · My Blog</title>
+<meta name="description" content="'소개' 태그가 달린 글 목록" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml" />
+<link rel="stylesheet" href="../../assets/style.css" />
+<script>
+  // 깜빡임 방지: CSS/본문이 그려지기 전에 저장된 테마를 먼저 적용한다.
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-title" href="../../index.html">My Blog</a>
+    <nav class="site-nav">
+      <a href="../../index.html">홈</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크 모드 전환">🌙</button>
+    </nav>
+  </div>
+  <div class="wrap search-wrap">
+    <input id="search-input" type="search" placeholder="글 검색..." aria-label="글 검색" data-root="../../" />
+    <ul id="search-results" class="search-results" hidden></ul>
+  </div>
+</header>
+
+<main class="wrap content">
+
+<h1>태그: #소개</h1>
+<div class="post-list">
+<article class="post-card">
+  <h2><a href="../../posts/첫-글-안녕하세요/index.html">첫 글, 안녕하세요</a></h2>
+  <p class="post-meta"><time datetime="2026-09-21">2026-09-21</time></p>
+  <p class="post-excerpt">이 블로그를 시작하며 남기는 첫 번째 글입니다.</p>
+  <ul class="tag-list"><li><a class="tag" href="../../tags/일상/index.html">#일상</a></li><li><a class="tag" href="../../tags/소개/index.html">#소개</a></li></ul>
+</article></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; 2026 My Blog</p>
+  </div>
+</footer>
+
+<script src="../../assets/script.js"></script>
+</body>
+</html>

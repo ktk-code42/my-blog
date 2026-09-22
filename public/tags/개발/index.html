@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>#개발 · My Blog</title>
+<meta name="description" content="'개발' 태그가 달린 글 목록" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml" />
+<link rel="stylesheet" href="../../assets/style.css" />
+<script>
+  // 깜빡임 방지: CSS/본문이 그려지기 전에 저장된 테마를 먼저 적용한다.
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-title" href="../../index.html">My Blog</a>
+    <nav class="site-nav">
+      <a href="../../index.html">홈</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크 모드 전환">🌙</button>
+    </nav>
+  </div>
+  <div class="wrap search-wrap">
+    <input id="search-input" type="search" placeholder="글 검색..." aria-label="글 검색" data-root="../../" />
+    <ul id="search-results" class="search-results" hidden></ul>
+  </div>
+</header>
+
+<main class="wrap content">
+
+<h1>태그: #개발</h1>
+<div class="post-list">
+<article class="post-card">
+  <h2><a href="../../posts/오늘-배운-것/index.html">오늘 배운 것</a></h2>
+  <p class="post-meta"><time datetime="2026-09-22">2026-09-22</time></p>
+  <p class="post-excerpt">클로드 코드로 블로그를 만들면서 정리한 HTML, CSS, JavaScript의 역할.</p>
+  <ul class="tag-list"><li><a class="tag" href="../../tags/개발/index.html">#개발</a></li><li><a class="tag" href="../../tags/회고/index.html">#회고</a></li></ul>
+</article>
+
+<article class="post-card">
+  <h2><a href="../../posts/다크-모드는-왜-필요할까/index.html">다크 모드는 왜 필요할까</a></h2>
+  <p class="post-meta"><time datetime="2026-09-19">2026-09-19</time></p>
+  <p class="post-excerpt">다크 모드를 지원하면 좋은 이유와 구현 방법을 간단히 다룹니다.</p>
+  <ul class="tag-list"><li><a class="tag" href="../../tags/디자인/index.html">#디자인</a></li><li><a class="tag" href="../../tags/개발/index.html">#개발</a></li></ul>
+</article>
+
+<article class="post-card">
+  <h2><a href="../../posts/정적-사이트의-장점/index.html">정적 사이트의 장점</a></h2>
+  <p class="post-meta"><time datetime="2026-09-17">2026-09-17</time></p>
+  <p class="post-excerpt">서버 없이도 빠르고 안정적인 사이트를 만들 수 있는 이유.</p>
+  <ul class="tag-list"><li><a class="tag" href="../../tags/개발/index.html">#개발</a></li></ul>
+</article></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; 2026 My Blog</p>
+  </div>
+</footer>
+
+<script src="../../assets/script.js"></script>
+</body>
+</html>

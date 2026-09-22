@@ -1,0 +1,16 @@
+{
+  "name": "my-blog",
+  "version": "1.0.0",
+  "description": "마크다운을 정적 블로그로 변환하는 프로젝트 (프레임워크 없이 HTML/CSS/JS)",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "serve": "npx --yes serve public"
+  },
+  "keywords": ["blog", "markdown", "static-site"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "marked": "^18.0.13"
+  }
+}

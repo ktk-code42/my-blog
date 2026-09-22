@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{title}}</title>
+<meta name="description" content="{{description}}" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{{rootPath}}rss.xml" />
+<link rel="stylesheet" href="{{rootPath}}assets/style.css" />
+<script>
+  // 깜빡임 방지: CSS/본문이 그려지기 전에 저장된 테마를 먼저 적용한다.
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-title" href="{{rootPath}}index.html">My Blog</a>
+    <nav class="site-nav">
+      <a href="{{rootPath}}index.html">홈</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크 모드 전환">🌙</button>
+    </nav>
+  </div>
+  <div class="wrap search-wrap">
+    <input id="search-input" type="search" placeholder="글 검색..." aria-label="글 검색" data-root="{{rootPath}}" />
+    <ul id="search-results" class="search-results" hidden></ul>
+  </div>
+</header>
+
+<main class="wrap content">
+{{content}}
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; {{year}} My Blog</p>
+  </div>
+</footer>
+
+<script src="{{rootPath}}assets/script.js"></script>
+</body>
+</html>

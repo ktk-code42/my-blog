@@ -1,0 +1,306 @@
+:root {
+  --bg: #faf8ef;
+  --text: #776e65;
+  --header-text: #3c3a32;
+  --board-bg: #bbada0;
+  --cell-bg: rgba(238, 228, 218, 0.35);
+  --btn-bg: #8f7a66;
+  --btn-bg-hover: #9c8a77;
+  --overlay-bg: rgba(238, 228, 218, 0.85);
+  --gap: 12px;
+  --radius: 8px;
+
+  --tile-2-bg: #eee4da;
+  --tile-2-text: #776e65;
+  --tile-4-bg: #ede0c8;
+  --tile-4-text: #776e65;
+  --tile-8-bg: #f2b179;
+  --tile-8-text: #f9f6f2;
+  --tile-16-bg: #f59563;
+  --tile-16-text: #f9f6f2;
+  --tile-32-bg: #f67c5f;
+  --tile-32-text: #f9f6f2;
+  --tile-64-bg: #f65e3b;
+  --tile-64-text: #f9f6f2;
+  --tile-128-bg: #edcf72;
+  --tile-128-text: #f9f6f2;
+  --tile-256-bg: #edcc61;
+  --tile-256-text: #f9f6f2;
+  --tile-512-bg: #edc850;
+  --tile-512-text: #f9f6f2;
+  --tile-1024-bg: #edc53f;
+  --tile-1024-text: #f9f6f2;
+  --tile-2048-bg: #edc22e;
+  --tile-2048-text: #f9f6f2;
+  --tile-super-bg: #3c3a32;
+  --tile-super-text: #f9f6f2;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1c1a17;
+    --text: #d7cfc4;
+    --header-text: #f2ece2;
+    --board-bg: #4a443c;
+    --cell-bg: rgba(255, 255, 255, 0.08);
+    --btn-bg: #8f7a66;
+    --btn-bg-hover: #a08b76;
+    --overlay-bg: rgba(28, 26, 23, 0.85);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #1c1a17;
+  --text: #d7cfc4;
+  --header-text: #f2ece2;
+  --board-bg: #4a443c;
+  --cell-bg: rgba(255, 255, 255, 0.08);
+  --btn-bg: #8f7a66;
+  --btn-bg-hover: #a08b76;
+  --overlay-bg: rgba(28, 26, 23, 0.85);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Malgun Gothic", sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px 40px;
+}
+
+.app-wrap {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.game-header h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 8vw, 2.5rem);
+  color: var(--header-text);
+  font-weight: 700;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 8px;
+}
+
+.score-box {
+  background: var(--board-bg);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 6px 14px;
+  min-width: 64px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.score-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+.score-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.instructions {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--text);
+  flex: 1;
+}
+
+.new-game-btn,
+.overlay-buttons button {
+  background: var(--btn-bg);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+  transition: background 0.15s ease;
+}
+
+.new-game-btn:hover,
+.overlay-buttons button:hover {
+  background: var(--btn-bg-hover);
+}
+
+.board-container {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  background: var(--board-bg);
+  border-radius: var(--radius);
+  padding: var(--gap);
+  touch-action: none;
+  user-select: none;
+}
+
+.grid-background {
+  position: absolute;
+  inset: var(--gap);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: var(--gap);
+}
+
+.grid-cell {
+  background: var(--cell-bg);
+  border-radius: var(--radius);
+}
+
+.tile-container {
+  position: absolute;
+  inset: var(--gap);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: var(--gap);
+}
+
+.tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: clamp(1rem, 6vw, 2rem);
+  transition: transform 100ms ease-in-out;
+}
+
+.tile-new {
+  animation: tile-pop 150ms ease-in-out;
+}
+
+.tile-merged {
+  animation: tile-pulse 150ms ease-in-out;
+}
+
+@keyframes tile-pop {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+@keyframes tile-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.tile-2 { background: var(--tile-2-bg); color: var(--tile-2-text); }
+.tile-4 { background: var(--tile-4-bg); color: var(--tile-4-text); }
+.tile-8 { background: var(--tile-8-bg); color: var(--tile-8-text); }
+.tile-16 { background: var(--tile-16-bg); color: var(--tile-16-text); }
+.tile-32 { background: var(--tile-32-bg); color: var(--tile-32-text); }
+.tile-64 { background: var(--tile-64-bg); color: var(--tile-64-text); }
+.tile-128 { background: var(--tile-128-bg); color: var(--tile-128-text); }
+.tile-256 { background: var(--tile-256-bg); color: var(--tile-256-text); }
+.tile-512 { background: var(--tile-512-bg); color: var(--tile-512-text); }
+.tile-1024 {
+  background: var(--tile-1024-bg);
+  color: var(--tile-1024-text);
+  box-shadow: 0 0 12px rgba(237, 197, 63, 0.5);
+}
+.tile-2048 {
+  background: var(--tile-2048-bg);
+  color: var(--tile-2048-text);
+  box-shadow: 0 0 16px rgba(237, 194, 46, 0.65);
+}
+.tile-super {
+  background: var(--tile-super-bg);
+  color: var(--tile-super-text);
+  font-size: clamp(0.75rem, 4.5vw, 1.5rem);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  background: var(--overlay-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding: 24px;
+}
+
+.overlay[hidden] {
+  display: none;
+}
+
+.overlay-message {
+  margin: 0;
+  font-size: clamp(1.25rem, 6vw, 1.75rem);
+  font-weight: 700;
+  color: var(--header-text);
+}
+
+.overlay-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.back-link {
+  align-self: center;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.back-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+@media (max-width: 360px) {
+  :root {
+    --gap: 8px;
+  }
+  body {
+    padding: 16px 12px 32px;
+  }
+}

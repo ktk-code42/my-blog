@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Blog · 2페이지</title>
+<meta name="description" content="마크다운으로 작성한 블로그 글 목록" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml" />
+<link rel="stylesheet" href="../../assets/style.css" />
+<script>
+  // 깜빡임 방지: CSS/본문이 그려지기 전에 저장된 테마를 먼저 적용한다.
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-title" href="../../index.html">My Blog</a>
+    <nav class="site-nav">
+      <a href="../../index.html">홈</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크 모드 전환">🌙</button>
+    </nav>
+  </div>
+  <div class="wrap search-wrap">
+    <input id="search-input" type="search" placeholder="글 검색..." aria-label="글 검색" data-root="../../" />
+    <ul id="search-results" class="search-results" hidden></ul>
+  </div>
+</header>
+
+<main class="wrap content">
+
+
+<h1>모든 글</h1>
+<div class="post-list">
+<article class="post-card">
+  <h2><a href="../../posts/정적-사이트의-장점/index.html">정적 사이트의 장점</a></h2>
+  <p class="post-meta"><time datetime="2026-09-17">2026-09-17</time></p>
+  <p class="post-excerpt">서버 없이도 빠르고 안정적인 사이트를 만들 수 있는 이유.</p>
+  <ul class="tag-list"><li><a class="tag" href="../../tags/개발/index.html">#개발</a></li></ul>
+</article>
+
+<article class="post-card">
+  <h2><a href="../../posts/rss-피드가-아직-유용한-이유/index.html">RSS 피드가 아직 유용한 이유</a></h2>
+  <p class="post-meta"><time datetime="2026-09-16">2026-09-16</time></p>
+  <p class="post-excerpt">구독 경제 시대에도 RSS가 여전히 쓸모 있는 이유를 짚어봅니다.</p>
+  <ul class="tag-list"><li><a class="tag" href="../../tags/일상/index.html">#일상</a></li></ul>
+</article></div>
+
+<nav class="pagination" aria-label="페이지 이동">
+  <a class="page-link" href="../../index.html">&larr; 이전</a>
+  <span class="page-status">2 / 2</span>
+  <span class="page-link disabled">다음 &rarr;</span>
+</nav>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; 2026 My Blog</p>
+  </div>
+</footer>
+
+<script src="../../assets/script.js"></script>
+</body>
+</html>

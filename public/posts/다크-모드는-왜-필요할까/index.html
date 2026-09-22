@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>다크 모드는 왜 필요할까 · My Blog</title>
+<meta name="description" content="다크 모드를 지원하면 좋은 이유와 구현 방법을 간단히 다룹니다." />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml" />
+<link rel="stylesheet" href="../../assets/style.css" />
+<script>
+  // 깜빡임 방지: CSS/본문이 그려지기 전에 저장된 테마를 먼저 적용한다.
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-title" href="../../index.html">My Blog</a>
+    <nav class="site-nav">
+      <a href="../../index.html">홈</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크 모드 전환">🌙</button>
+    </nav>
+  </div>
+  <div class="wrap search-wrap">
+    <input id="search-input" type="search" placeholder="글 검색..." aria-label="글 검색" data-root="../../" />
+    <ul id="search-results" class="search-results" hidden></ul>
+  </div>
+</header>
+
+<main class="wrap content">
+
+<article class="post">
+  <h1>다크 모드는 왜 필요할까</h1>
+  <p class="post-meta"><time datetime="2026-09-19">2026-09-19</time></p>
+  <ul class="tag-list"><li><a class="tag" href="../../tags/디자인/index.html">#디자인</a></li><li><a class="tag" href="../../tags/개발/index.html">#개발</a></li></ul>
+  <div class="post-body">
+    <p>밤에 화면을 보면 눈이 피로해지기 쉽습니다. 다크 모드는 이런 피로를 줄여줍니다.</p>
+<p>CSS 커스텀 프로퍼티와 <code>data-theme</code> 속성, 그리고 <code>localStorage</code>만 있으면
+프레임워크 없이도 충분히 구현할 수 있습니다.</p>
+
+  </div>
+  <p class="post-back"><a href="../../index.html">&larr; 목록으로</a></p>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; 2026 My Blog</p>
+  </div>
+</footer>
+
+<script src="../../assets/script.js"></script>
+</body>
+</html>

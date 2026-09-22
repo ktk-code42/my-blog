@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>마크다운으로 글 쓰는 팁 · My Blog</title>
+<meta name="description" content="마크다운 문법 중 자주 쓰는 것들을 정리했습니다." />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml" />
+<link rel="stylesheet" href="../../assets/style.css" />
+<script>
+  // 깜빡임 방지: CSS/본문이 그려지기 전에 저장된 테마를 먼저 적용한다.
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="site-title" href="../../index.html">My Blog</a>
+    <nav class="site-nav">
+      <a href="../../index.html">홈</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크 모드 전환">🌙</button>
+    </nav>
+  </div>
+  <div class="wrap search-wrap">
+    <input id="search-input" type="search" placeholder="글 검색..." aria-label="글 검색" data-root="../../" />
+    <ul id="search-results" class="search-results" hidden></ul>
+  </div>
+</header>
+
+<main class="wrap content">
+
+<article class="post">
+  <h1>마크다운으로 글 쓰는 팁</h1>
+  <p class="post-meta"><time datetime="2026-09-20">2026-09-20</time></p>
+  <ul class="tag-list"><li><a class="tag" href="../../tags/글쓰기/index.html">#글쓰기</a></li><li><a class="tag" href="../../tags/팁/index.html">#팁</a></li></ul>
+  <div class="post-body">
+    <p>마크다운은 배우기 쉽고 읽기도 편합니다.</p>
+<ol>
+<li>제목은 <code>#</code>으로 시작합니다.</li>
+<li><strong>굵게</strong>는 별표 두 개, <em>기울임</em>은 별표 하나입니다.</li>
+<li>목록은 <code>-</code> 또는 숫자로 만듭니다.</li>
+</ol>
+<blockquote>
+<p>인용문은 이렇게 씁니다.</p>
+</blockquote>
+<p>링크는 <a href="https://example.com">이렇게</a> 씁니다.</p>
+
+  </div>
+  <p class="post-back"><a href="../../index.html">&larr; 목록으로</a></p>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>&copy; 2026 My Blog</p>
+  </div>
+</footer>
+
+<script src="../../assets/script.js"></script>
+</body>
+</html>
